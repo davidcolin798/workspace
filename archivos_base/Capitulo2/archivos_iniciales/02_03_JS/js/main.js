@@ -5,10 +5,13 @@ var paso =10;
 
 function init(){
     var grafica = document.getElementById("sec_grafica");
-    grafica.style.display ="none";
+    //grafica.style.display ="none";
 
-    var mapa= document.getElementById("sec_mapa");
-    mapa.style.display="none";
+    var mapa= document.getElementById("mapa");
+    //mapa.style.display="none";
+   
+    creaGrafica(); 
+    creaMapa();
 }
 function cambio(ref){
     ocultar();
@@ -22,8 +25,8 @@ function ocultar(){
     var grafica = document.getElementById("sec_grafica");
     grafica.style.display ="none";
 
-    var mapa = document.getElementById("sec_mapa");
-    mapa.style.display ="none";
+   var mapa = document.getElementById("sec_mapa");
+   mapa.style.display ="none";
 }
 function creaGrafica(){
     canvas = document.getElementById("grafica");
@@ -36,9 +39,9 @@ function creaGrafica(){
     }
 }
 function dibujarGrafica(){
-    var valor= Math.round(200*Math.random());
+    var valor = Math.round(200*Math.random());
     context.beginPath();
-    var newPosX = pastPostX+paso;
+    var newPosX = pastPostX + paso;
     var newPosY = 200 - valor;
     context.moveTo(pastPostX,pastPostY);
     context.strokeStyle = "#ff0000";
@@ -49,5 +52,15 @@ function dibujarGrafica(){
     pastPostY = newPosY;
     
     setTimeout("dibujarGrafica()", 500);
+
+}
+function creaMapa(){
+    leon = {lat:42.603852,lng:-5.570101} ;
+    map= new 
+    google.maps.Map(document.getElementById('mapa'),{
+        center:leon,zoom:12
+    });
+    var marker = new google.maps.Marker({position:leon,map: map});
+
 
 }
