@@ -1,0 +1,60 @@
+$fuente: 1em Arial, sans-serif;
+$ancho: 90%;
+$colorFondo: #335CAD;
+$size: 8;
+
+body{
+    font: $fuente;
+}
+
+.articulo{
+    display: inline-block;
+    width: $ancho * 0.4;
+    background-color: $colorFondo;
+}
+.articulo:first-child{
+    width: $ancho * 0.5;
+    background-color: invert($colorFondo);
+}
+
+@mixin rotulos{
+    font:{
+        size:1.4em;
+        weight: 100;
+    }
+}
+@mixin secundario{
+    font-size: 1.2em;
+    color: #ffffff;
+}
+
+
+h1{
+    @include rotulos;
+}
+h2{
+     @include rotulos;
+     @include secundario;
+    font-size: 1.35em;
+}
+
+
+a{
+    font-size: $size+px;
+    text-decoration: none;
+}
+
+
+@if($size <= 8){
+    a{
+        text-decoration: underline;
+    }
+    
+}
+
+
+
+
+
+
+

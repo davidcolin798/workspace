@@ -1,0 +1,103 @@
+/* css globales */
+*{
+    font-family: sans-serif;
+}
+
+html, body{
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+
+
+
+/* contenedor principal de la página */
+#main_wrapper {
+    min-height: 100%;
+    position: relative;
+}
+
+
+
+/* configuración del header */
+header h1{
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    font-weight: 700;
+    color: #ffffff;
+    background-color: #800000;
+    margin: 0px;
+    padding: 0px;
+    font-size: 30px;
+}
+
+
+
+
+/* organización de la parte central de la página */
+
+/* botonera lateral */
+aside{
+    display: block;
+    background-color: #75A319;
+    width: 120px;
+}
+aside nav ul {
+    padding: 4px;
+    padding-left: 10px;
+    margin: 0px;
+}
+aside nav ul li{
+    list-style: none;
+    height: 22px;
+    line-height: 22px;
+}
+aside nav ul li a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+
+/* contenidos de la página */
+#contents {
+    
+    overflow: hidden;
+}
+section {
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+
+/* footer de la página */
+footer {
+    position: absolute;
+    background-color: #8F4700;
+    color: #ffffff;
+    width: 100%;
+    text-align: center;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+    bottom: 0px;
+}
+
+#grafica {
+   margin: 0 auto;
+    display: block;
+}
+
+canvas{
+    border: 1px solid;
+}
+
+#mapa {
+   margin: 0 auto;
+   display: block;
+    width: 350px;
+    height: 250px;
+    margin-bottom: 60px;
+}

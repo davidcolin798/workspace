@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "estilos.css",
+  "sources": [
+    "estilos.scss"
+  ],
+  "sourcesContent": [],
+  "mappings": ";AAKA;EACI,AANS;;;AASb;EACI,AAAS;EACT,AAAO;EACP,AAVS;;;AAYb,AAAS;EACL,AAAO;EACP,AAAkB;;;AAetB;EAXI,AACS;EADT,AAEY;;;AAYhB;EAdI,AACS;EADT,AAEY;EAIZ,AAAW;EACX,AAAO;EAUP,AAAW;;;AAIf;EACI,AAvCG;EAwCH,AAAiB;;;AAKrB;EACQ,AAAiB",
+  "names": []
+}

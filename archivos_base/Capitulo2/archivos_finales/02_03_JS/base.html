@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Maqueta básica</title>
+    <link href="css/estilos.css" rel="stylesheet"/>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
+
+    <script src="js/main.js"></script>
+</head>
+<body onload="init()">
+    <div id="main_wrapper">
+        <header><h1>HEADER</h1></header>
+        <div id="main_container">
+            <aside>
+                <nav>
+                    <ul>
+                        <li><a href="#" onclick="cambio('sec_textos')">Ver textos</a></li>
+                        <li><a href="#" onclick="cambio('sec_grafica')">Ver gráfica</a></li>
+                        <li><a href="#" onclick="cambio('sec_mapa');">Ver mapa</a></li>
+                    </ul>
+                </nav>
+            </aside>
+            
+            <div id="contents">
+                <section id="sec_textos">
+                    <h2>Culpa id ne noster mandaremus, voluptate imitarentur se incididunt si tempor</h2>
+                    <p>Culpa id ne noster mandaremus, voluptate imitarentur se incididunt si tempor 
+                        voluptatibus in doctrina non non o noster duis duis, in anim tempor ubi occaecat 
+                        minim nescius, vidisse minim dolor appellat summis do tamen sempiternum 
+                        excepteur cillum singulis. Nostrud enim nulla ita tamen, labore incididunt ex 
+                        labore quem. Enim cupidatat do admodum. Iis anim ita fore an amet deserunt ea 
+                        arbitror. E an varias quibusdam, quo ut firmissimum, enim litteris id 
+                        efflorescere, quid in aut fore possumus. Aliqua id iis fugiat consequat. Elit 
+                        incididunt sed laborum, non sunt appellat qui ita an exquisitaque, quis nostrud 
+                        ex dolore nulla.</p>
+                </section>
+                <section id="sec_grafica">
+                    <h2>Gráfica</h2>
+                    <canvas id="grafica" width="350" height="200"></canvas>
+                </section>
+                <section id="sec_mapa">
+                    <h2>Mapa</h2>
+                    <div id="mapa"></div>
+                </section>
+            </div>
+        </div>
+        
+        <footer>FOOTER</footer>
+    </div>
+
+
+</body>
+</html>

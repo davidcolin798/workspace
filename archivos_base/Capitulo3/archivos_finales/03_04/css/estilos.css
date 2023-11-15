@@ -1,0 +1,38 @@
+/* line 6, C:/wamp/www/03_04/css/estilos.scss */
+body {
+  font: 1em Arial, sans-serif; }
+
+/* line 10, C:/wamp/www/03_04/css/estilos.scss */
+.articulo {
+  display: inline-block;
+  width: 36%;
+  background-color: #335CAD; }
+
+/* line 15, C:/wamp/www/03_04/css/estilos.scss */
+.articulo:first-child {
+  width: 45%;
+  background-color: #cca352; }
+
+/* line 32, C:/wamp/www/03_04/css/estilos.scss */
+h1 {
+  font-size: 1.4em;
+  font-weight: 100; }
+
+/* line 35, C:/wamp/www/03_04/css/estilos.scss */
+h2 {
+  font-size: 1.4em;
+  font-weight: 100;
+  font-size: 1.2em;
+  color: #ffffff;
+  font-size: 1.35em; }
+
+/* line 42, C:/wamp/www/03_04/css/estilos.scss */
+a {
+  font-size: 8px;
+  text-decoration: none; }
+
+/* line 49, C:/wamp/www/03_04/css/estilos.scss */
+a {
+  text-decoration: underline; }
+
+/*# sourceMappingURL=estilos.css.map */

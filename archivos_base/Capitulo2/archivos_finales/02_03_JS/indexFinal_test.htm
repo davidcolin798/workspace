@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <!--  título que aparece en la parte superior del navegador-->
+        <title>Consumo cintas Hullera Vasco Leonesa</title>
+        <!--  etiqueta que define que dentro hay javascript -->
+        <script>
+        
+        //función de testeo para crear la gráfica cuando no está conectado el html al aparato
+        //var i=0
+        function testGrafica(){
+            var valor1 = 400*Math.random();
+            dibujaGrafica({posY1:valor1});
+            setTimeout('testGrafica()', 1000);
+            console.log(valor1);
+        }
+        setTimeout('testGrafica()', 2000);
+        
+
+        
+        //declaración de las variables de javascript
+        var posX = 1;
+        var _posY1 = maxHeight + 40;
+        var propo = 1;
+        var canvas, context;
+        //alto máximo en píxeles de los ejes
+        var maxHeight = 200;
+        //ancho de la gráfica
+        var maxWidth = 350;
+        //valor máximo previsto
+        var maxValue = 450;
+        //distancia horizontal entre valores
+        var pasoHz = 10;
+        //nombres de los nodos que lleva los datos para las gráficas
+        var nodo1 = "inputE2_motor1";
+
+        function dibujaGrafica(datos){
+            //si aún no se ha inicializado nunca la página, preparo lo necesario
+            if(canvas == null){
+                //cargo en la variable canvas el canvas donde se carga la gráfica
+                canvas = document.getElementById("grafica");
+                //aquí se define si el canvas trabaja en 2D o en 3D
+                context = canvas.getContext("2d");
+                //esta variable sirve para escalar los valores adaptándolos
+                //para que el valor máximo previsto entre en la tabla
+                propo = maxHeight / maxValue;
+
+            }
+            //fijo la última posición hz para usarla de referencia
+            if(posX == 0){
+                posX = 20;
+                pastPosX = 0;
+            }else{
+                pastPosX = posX-pasoHz;
+            }
+                
+            //aquí dibujo el nuevo trozo de gráfica
+            //reconstruyo el tipo de línea
+            context.beginPath();
+            //pongo el cursor en el principio del trazo
+            context.moveTo(pastPosX, _posY1);
+            //guardo el valor y ya preparado para usarlo cuando construya la siguiente línea
+            var posYTemp1 = maxHeight - (datos.posY1 * propo); 
+            _posY1 = posYTemp1;
+            //pongo los valores de estilo de la línea
+            context.strokeStyle = "#ff0000";
+            context.lineWidth = 1;
+            //pinto la línea
+            context.lineTo(posX, _posY1);
+            //pido al sistema que renderice la nueva línea
+            context.stroke();
+
+            //guardo el valor x movido a la derecha para dibujar la siguiente línea
+            posX += pasoHz;
+            
+            //en caso de llegar al final por la derecha, reseteo la gráfica
+            if(posX > maxWidth){
+                //elimino la traslación para saltarme calcular los márgenes
+                context.restore();
+                //pongo la proóxima x a 0
+                posX = 0;
+            }
+            
+        }
+
+    </script>
+    <!--  etiqueta que define que dentro están los css -->
+    <style type="text/css">
+        
+        /* le pongo borde al canvas */
+        canvas{
+            border: solid 1px;
+        }
+        
+    </style>
+    </head>
+    <!-- defino que al cargar la página se llame por primera vez 
+    a la función que pide los datos de arduino  -->
+    <body >
+        <!-- canvas donde se pinta la gráfica -->
+        <canvas id="grafica" width="350px" height="200px"></canvas>
+    </body>
+</html>
